@@ -1,6 +1,11 @@
 import gradio as gr
 from PIL import Image
 
+# Constants
+DEFAULT_IMAGE_WIDTH = 1024
+DEFAULT_IMAGE_HEIGHT = 1024
+PLACEHOLDER_COLOR = (73, 109, 137)  # Blue-gray color for placeholder images
+
 def generate_image(prompt):
     """
     Generate an image based on text prompt using Tongyi MAI-Z Image Turbo model.
@@ -21,7 +26,7 @@ def generate_image(prompt):
         
         # Create a placeholder image
         # In production, this would call the actual Tongyi MAI-Z Image API
-        img = Image.new('RGB', (1024, 1024), color=(73, 109, 137))
+        img = Image.new('RGB', (DEFAULT_IMAGE_WIDTH, DEFAULT_IMAGE_HEIGHT), color=PLACEHOLDER_COLOR)
         
         return img
         
